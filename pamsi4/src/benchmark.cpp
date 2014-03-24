@@ -27,6 +27,7 @@ bool benchmark::wykonaj_sprawdzenie_algorytmu(int ile_razy){
 	int plik_ze_sciezkami=0;
  	int i;
  //	char * plik_sprawdzajacy=(char *)"sprawdzenie.txt";
+	 char * plik_wyjsciowy=(char *)"wyjscie.txt";
  	char * plik_wynikowy=(char *)"wynik.txt";
  	dlugosc_tablicy_czasow=ile_razy;
  	tablica_czasow=new double[ile_razy];
@@ -100,8 +101,8 @@ bool benchmark::zapisz_czasy_do_pliku(char *nazwa){
 	fstream plik_wyjsciowy;
 	int i;
 	Komunikacja dialog;
-	cout<<"Czy zapisac wynik obliczen? (t/n)"<<endl;
-	if(dialog.pytanie_tak_nie()){	
+//	cout<<"Czy zapisac wynik obliczen? (t/n)"<<endl;
+	if(1){//dialog.pytanie_tak_nie()){	
 		plik_wyjsciowy.open(nazwa,ios::out);
 		if(plik_wyjsciowy.good()==false){
 			cerr<<"Nie udalo sie zapisac danych do pliku"<<endl;

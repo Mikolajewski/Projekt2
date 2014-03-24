@@ -11,6 +11,7 @@
 #include "konfiguracja.hh"
 #include "stos.hh"
 #include "kolejka.hh"
+#include "sortowanie2.hh"
 
 using namespace std;
 
@@ -20,22 +21,10 @@ using namespace std;
 Wykonuje czynnosci zgodne z zadanym algorytme.
 */
 bool Przykladowy_program::wykonaj_program(Tablica& dane){
-	Stos_lub_kolejka <int,kolejeczka> tablica_stos;
-	int i;
-	for(i=0;i<dane.dlugosc_tablicy;i++){
-		tablica_stos.push(dane.tablica[i]);
-	}
-
-//Lista_stos <int> stos;
-//	for(i=0;i<dane.dlugosc_tablicy;i++){
-//		stos.lista.push(dane.tablica[i]);
-//	}
-//Lista_kolejka <int> kolejka;
-
-//	for(i=0;i<dane.dlugosc_tablicy;i++){
-//		kolejka.elementy.push(dane.tablica[i]);
-//	}
-
+	Sortowanie <int> algorytm;
+	algorytm.quicksort((int*)dane.tablica,dane.tablica+dane.dlugosc_tablicy-1);
+//	algorytm.merge((int*)dane.tablica,dane.tablica+dane.dlugosc_tablicy-1);
+//	algorytm.kopcowanie((int*)dane.tablica,dane.tablica+dane.dlugosc_tablicy-1);
 return true;
 };
 
